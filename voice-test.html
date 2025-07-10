@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎤 Voice Recognition Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background: #f5f5f5;
+    }
+    #output {
+      margin-top: 20px;
+      padding: 1rem;
+      border: 1px dashed #888;
+      background: white;
+      font-size: 1.1rem;
+    }
+    button {
+      font-size: 1.1rem;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<h2>🎤 Voice Recognition Test (Chrome Only)</h2>
+<p>Click the button and say something. The recognized text will appear below.</p>
+
+<button id="startBtn">🎙 Start Voice Recognition</button>
+<div id="output">👉 Waiting for input...</div>
+
+<script>
+  document.getElementById("startBtn").addEventListener("click", () => {
+    if (!('webkitSpeechRecognition' in window)) {
+      alert("❌ Voice recognition not supported in this browser.");
+      return;
+    }
+
+    const recognition = new webkitSpeechRecognition();
+    recognition.lang = "en-US";
+    recognition.interimResults = false;
+
+    recognition.onstart = () => {
+      document.getElementById("output").innerText = "🎧 Listening...";
+    };
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      document.getElementById("output").innerText = "✅ You said: " + transcript;
+    };
+
+    recognition.onerror = (event) => {
+      let error = event.error;
+      let msg = "❌ Error: " + error;
+      if (error === "network") {
+        msg += " (Check your internet connection or HTTPS)";
+      } else if (error === "not-allowed") {
+        msg += " (Mic permission denied)";
+      }
+      document.getElementById("output").innerText = msg;
+    };
+
+    recognition.start();
+  });
+</script>
+
+</body>
+</html>
+
+<!-- https://chatgpt.com/share/686d0b2d-14e4-800f-a783-5b251b310590 -->
+ <!-- "What is my pending task?" (Lists up to 3)
+
+✅ "What tasks are completed?" / "Show completed tasks" -->
+
+<!-- "What is my pending task?" → shows all pending tasks in a modal
+
+"What tasks are completed?" or "What is my completed task?" → shows completed ones -->

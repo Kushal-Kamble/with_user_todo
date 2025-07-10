@@ -1,0 +1,63 @@
+/* ✨ Card Wrapper */
+.login-card {
+  background: #fefffe;
+  border-radius: 16px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+/* 🔥 On hover */
+.login-card:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* 🖼 Logo */
+.login-logo {
+  max-width: 160px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 🔐 Title */
+.login-title {
+  color: #212428;
+  font-weight: 700;
+}
+
+/* 📥 Input fields */
+.login-card .form-control {
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  transition: 0.3s;
+}
+
+.login-card .form-control:focus {
+  border-color: #fe9e43;
+  box-shadow: 0 0 0 0.2rem rgba(254, 158, 67, 0.25);
+}
+
+/* 🔘 Brand Button */
+.btn-brand {
+  background-color: #fe9e43;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 12px;
+  border: none;
+}
+
+.btn-brand:hover {
+  background-color: #e88b2a;
+}
+
+/* 🧑‍💻 Link */
+a {
+  color: #fe9e43;
+}
+
+a:hover {
+  text-decoration: underline;
+}
