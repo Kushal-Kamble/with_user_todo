@@ -20,7 +20,7 @@
     <div class="col-md-6 col-lg-5">
       <div class="login-card">
         <img src="images/mitsde-logo.svg" alt="MITSDE Logo" class="login-logo mb-3">
-        <h3 class="text-center login-title mb-4">📝 Create Your ToDo AI Account</h3>
+        <h6 class="text-center login-title mb-4">📝 Create Your ToDo AI Account</h6>
         <form action="php/auth.php" method="POST">
           <div class="mb-2">
             <label class="form-label">👤 Full Name</label>
@@ -38,7 +38,7 @@
             <label class="form-label">🎭 Role</label>
             <select name="role" class="form-control form-select" required>
               <option value="user">User</option>
-              <option value="manager">Manager</option>
+              <!-- <option value="manager">Manager</option> -->
               <option value="admin">Admin</option>
             </select>
           </div>

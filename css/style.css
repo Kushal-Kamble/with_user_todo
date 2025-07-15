@@ -1,4 +1,10 @@
 /* ✨ Card Wrapper */
+
+body {
+  background: #ef9d5e;
+  font-family: 'Arial', sans-serif;
+  color: #212428;
+}
 .login-card {
   background: #fefffe;
   border-radius: 16px;
@@ -29,7 +35,7 @@
 /* 📥 Input fields */
 .login-card .form-control {
   border-radius: 10px;
-  padding: 12px;
+  /* padding: 12px; */
   border: 1px solid #ddd;
   transition: 0.3s;
 }

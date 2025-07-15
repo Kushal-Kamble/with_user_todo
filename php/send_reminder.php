@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['task_id'])) {
     $mail->AddBCC("kushal.kamble@mitsde.com");
 
     $mail->CharSet = 'UTF-8';
-    $mail->Subject = "⏰🔔 Reminder From Admin: Complete Task - $taskTitle";
+    $mail->Subject = "⏰🔔 Reminder From Nitin Zadpe: Complete Task - $taskTitle";
 
     ob_start();
     ?>
